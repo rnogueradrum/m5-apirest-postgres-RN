@@ -45,6 +45,19 @@ public class CarController {
 		this.carRepository = carRepository;
 	}
 	
+	/**
+	 * 
+	 * findByDoors
+	 * http://localhost:8080/api/cars
+	 * 
+	 * @return a response entity with car
+	 */
+	@GetMapping("/cars/doors/{doors}")
+	public List<Car> findByDoors(@PathVariable("doors") Integer doors) {
+		log.info("REST request to find cars by doors");
+		
+		return this.carRepository.findByDoors(doors);   	
+	}
 
 	/**
 	 * 
