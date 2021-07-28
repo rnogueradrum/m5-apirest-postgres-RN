@@ -112,7 +112,7 @@ public class CarController {
 			return ResponseEntity.badRequest().build();
 		}
 		
-		car.setId(null);
+		
 		return ResponseEntity.ok(this.carRepository.save(car));
 	}
 	
